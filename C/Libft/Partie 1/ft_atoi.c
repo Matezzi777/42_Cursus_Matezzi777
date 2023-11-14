@@ -3,25 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:31:50 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/06 17:31:50 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/14 09:05:20 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char	*str)
+int	ft_atoi(char *str)
 {
-	int	nombre;
+	int	n;
 	int	i;
 
-	nombre = 0;
+	n = 0;
 	i = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	if (str[0] == '-')
+		i++;
+	while ((str[i] >= '0' && str[i] <= '9'))
 	{
-		nombre = nombre * 10;
-		nombre = nombre + str[i] - '0';
+		n = n * 10;
+		n = n + str[i] - '0';
 		i++;
 	}
-	return (nombre);
+	if (str[0] == '-')
+		n = -n;
+	return (n);
 }
