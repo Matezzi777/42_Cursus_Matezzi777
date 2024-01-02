@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 void	*ft_memset(void *s, int c, unsigned int n)
 {
+	unsigned int	i;
 	unsigned char	*a = s;
-	while (n--)
-		*a++ = c;
+	i = 0;
+	while (i < n)
+	{
+		*a = c;
+		a++;
+		i++;
+	}
 	return s;
 }
