@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 16:59:07 by marvin            #+#    #+#             */
-/*   Updated: 2023/11/06 16:59:07 by marvin           ###   ########.fr       */
+/*   Created: 2024/01/02 16:05:44 by marvin            #+#    #+#             */
+/*   Updated: 2024/01/02 16:05:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_isalnum(char	c)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
-		return (1);
-	else
-		return (0);
+	unsigned char	*a = s;
+	while (n--)
+		*a++ = c;
+	return s;
 }
