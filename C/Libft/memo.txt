@@ -1,1 +1,0 @@
-Pour strlcpy() voir Piscince > C02 > ex10 (ft_strlcpy())

@@ -5,39 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 23:41:30 by marvin            #+#    #+#             */
-/*   Updated: 2024/01/03 23:41:30 by marvin           ###   ########.fr       */
+/*   Created: 2023/09/18 16:29:44 by mmartina          #+#    #+#             */
+/*   Updated: 2024/01/04 12:26:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <bsd/string.h>
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < size - 1)
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
+{
+	unsigned int	len_src;
+	unsigned int	i;
+
+	len_src = ft_strlen(src);
+	i = 0;
+	if (size == 0)
+		return (len_src);
+	while (src[i] && (i < (size - 1)))
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	if (i != 0)
-		dest[i] = '\0';
-	return (i);
-}
-
-int	main(void)
-{
-	char	*source = "Bonjour";
-	char	*dest1 = "Au revoir";
-	char	*dest2 = "Au revoir";
-
-	printf("\nSource : %s\n\nDestination 1 : %s\nDestination 2 : %s\n\n", source, dest1, dest2);
-
-	printf("Strlcpy : %ld\n", strlcpy(dest1, source, 0));
-	printf("Destination 1 : %s\n\n", dest1);
-	printf("Ft_strlcpy : %ld\n", ft_strlcpy(dest2, source, 0));
-	printf("Destination 2 : %s\n", dest2);
+	dest[i] = '\0';
+	return (len_src);
 }
