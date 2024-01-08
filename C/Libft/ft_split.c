@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
+
+char	**ft_split(char const *s, char c);
 
 //OK
 int	ft_strlen(char const *str)

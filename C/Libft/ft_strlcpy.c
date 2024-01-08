@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mmartina <mmartina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:29:44 by mmartina          #+#    #+#             */
-/*   Updated: 2024/01/04 12:26:51 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/05 14:26:51 by mmartina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
 
 int	ft_strlen(char *str)
 {

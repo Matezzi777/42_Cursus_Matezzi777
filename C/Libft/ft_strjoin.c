@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+char	*ft_strjoin(char const *s1, char const *s2);
 
 int		ft_strlen(char const *str)
 {
@@ -21,8 +23,6 @@ int		ft_strlen(char const *str)
 		i++;
 	return (i);
 }
-
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -49,16 +49,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	if (argc == 3)
-	{
-		printf("s1 : %s (%d)\ns2 : %s (%d)\njoin : %s (%d)\n", argv[1], ft_strlen(argv[1]), argv[2], ft_strlen(argv[2]), ft_strjoin(argv[1], argv[2]), ft_strlen(ft_strjoin(argv[1], argv[2])));
-	}
-	else 
-		printf("Erreur nombre d'arguments invalide.\n");
 }
